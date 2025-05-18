@@ -1,0 +1,22 @@
+﻿@page
+@model DotNetAuth.Areas.Identity.Pages.Documents.IndexModel
+@{
+    ViewData["Title"] = "My Documents";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr><th>Title</th><th>Content</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var doc in Model.Documents)
+        {
+            <tr>
+                <td>@doc.Title</td>
+                <td>@doc.Content</td>
+            </tr>
+        }
+    </tbody>
+</table>
