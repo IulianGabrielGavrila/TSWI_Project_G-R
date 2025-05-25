@@ -12,20 +12,67 @@ html {
 }
 
 body {
-    background: linear-gradient(to right, #F8FBFD 0%, #E7ECEF 100%);
     font-family: 'Segoe UI', sans-serif;
+    color: #484538;
+}
+
+/* --- Form and Input Focus Styling --- */
+.form-control:focus,
+.form-check-input:focus {
+    border-color: #56A3A6;
+    box-shadow: 0 0 0 0.25rem rgba(86, 163, 166, 0.25);
+    outline: none;
+}
+
+.form-control,
+.form-check-input {
+    border-radius: 8px;
+    border-color: #C0D8E0;
+}
+
+    .form-check-input:checked {
+        background-color: #56A3A6;
+        border-color: #56A3A6;
+    }
+
+.form-label {
+    color: #484538;
+    font-weight: 500;
+}
+
+input::placeholder {
     color: #8B8C89;
 }
 
-
-/* --- Form and Button Focus Styling --- */
+/* --- Button Styling --- */
 .btn:focus,
-.btn:active:focus,
-.btn-link.nav-link:focus,
-.form-control:focus,
-.form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.btn-primary:focus,
+.btn-outline-secondary:focus {
+    box-shadow: 0 0 0 0.25rem rgba(86, 163, 166, 0.4);
+    outline: none;
 }
+
+.btn-primary {
+    background-color: #56A3A6;
+    border-color: #56A3A6;
+    color: #fff;
+}
+
+    .btn-primary:hover {
+        background-color: #C0D8E0;
+        border-color: #C0D8E0;
+        color: #484538;
+    }
+
+.btn-outline-secondary {
+    color: #484538;
+    border-color: #CAD49D;
+}
+
+    .btn-outline-secondary:hover {
+        background-color: #CAD49D;
+        color: #484538;
+    }
 
 /* --- Hero Section --- */
 .hero {
@@ -36,35 +83,12 @@ body {
     .hero h1 {
         font-size: 3rem;
         font-weight: 600;
-        color: #274C77;
+        color: #484538;
     }
 
     .hero p {
         font-size: 1.25rem;
-        color: #8B8C89;
-    }
-
-/* --- Buttons --- */
-.btn-primary {
-    background-color: #274C77;
-    border-color: #274C77;
-    color: white;
-}
-
-    .btn-primary:hover {
-        background-color: #6096BA;
-        border-color: #6096BA;
-        color: white;
-    }
-
-.btn-outline-secondary {
-    color: #274C77;
-    border-color: #A3CEF1;
-}
-
-    .btn-outline-secondary:hover {
-        background-color: #A3CEF1;
-        color: #274C77;
+        color: #484538;
     }
 
 /* --- Features --- */
@@ -74,30 +98,30 @@ body {
     padding: 25px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease-in-out;
-    color: #8B8C89;
+    color: #484538;
 }
 
     .feature-card:hover {
         transform: translateY(-5px);
-        border-left-color: #6096BA;
+        border-left: 5px solid #56A3A6;
     }
 
 .feature-icon {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #274C77;
+    color: #56A3A6;
 }
 
 .feature-heading {
     font-weight: 600;
-    color: #274C77;
+    color: #484538;
 }
 
 .feature-text {
-    color: #8B8C89;
+    color: #484538;
 }
 
-/* --- Branding Text --- */
+/* --- Branding --- */
 .text-logo {
-    color: #274C77;
+    color: #56A3A6;
 }
