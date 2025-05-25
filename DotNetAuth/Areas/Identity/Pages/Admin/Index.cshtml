@@ -61,5 +61,33 @@
                 </div>
             </div>
         </div>
+        <div class="container my-5">
+            <h3>All Users</h3>
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>User Name</th>
+                        <th>Email</th>
+                        <th>Roles</th>
+                        <th style="width:120px">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var u in Model.Users)
+                    {
+                        <tr>
+                            <td>@u.UserName</td>
+                            <td>@u.Email</td>
+                            <td>@u.Roles</td>
+                            <td>
+                                @* example actions: edit roles, delete user *@
+                                <a asp-page="./EditUser" asp-route-id="@u.Id" class="btn btn-sm btn-light">Edit</a>
+                                <a asp-page="./DeleteUser" asp-route-id="@u.Id" class="btn btn-sm btn-danger ms-1">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
