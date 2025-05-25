@@ -14,7 +14,13 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+//builder.Services.AddRazorPages(options =>
+//{
+//    // Map the /Pages/Index.cshtml page to also listen at “/Index”
+//    options.Conventions.AddPageRoute("/Index", "Index");
+//});
 builder.Services.AddRazorPages();
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
@@ -85,6 +91,11 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Permission}/{action=Dashboard}/{id?}");
+
 
 app.MapRazorPages();
 

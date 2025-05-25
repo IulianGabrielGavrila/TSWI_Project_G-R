@@ -115,7 +115,22 @@ namespace DotNetAuth.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    // 1) Grab the just-signed-in user
+                    var user = await _signInManager.UserManager.FindByEmailAsync(Input.Email);
+                    // 2) Fetch their roles
+                    var roles = await _signInManager.UserManager.GetRolesAsync(user!);
+
+                    // 3) Redirect based on role
+                    if (roles.Contains("Admin"))
+                    {
+                        // Goes to your PermissionController.Admin → Razor-Page /Areas/Identity/Pages/Admin/Index
+                        return LocalRedirect("~/admin");
+                    }
+                    else
+                    {
+                        // Goes to PermissionController.Documents → /Areas/Identity/Pages/Documents/Index
+                        return LocalRedirect("~/documents");
+                    }
                 }
                 if (result.RequiresTwoFactor)
                 {
