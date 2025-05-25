@@ -1,10 +1,54 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid py-5">
+    <div class="row align-items-center px-4 px-md-5">
+        <!-- SVG Section -->
+        <div class="col-md-6 text-center mb-4 mb-md-0">
+            <img src="~/img/data_reports.svg" alt="Reports Illustration" class="img-fluid" style="max-height: 350px;" />
+        </div>
+
+        <!-- Welcome Content -->
+        <div class="col-md-6 text-md-start text-center">
+            <h1 class="fw-bold mb-3" style="color: #56A3A6;">Welcome to JobReportPro</h1>
+            <p class="lead text-muted mb-4">
+                Track, manage, and organize your reports with clarity and confidence.
+            </p>
+            <div>
+                <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-primary btn-lg me-2">Login</a>
+                <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-outline-secondary btn-lg">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="my-5" style="border-top: 2px solid #CAD49D;" />
+
+    <!-- Features -->
+    <div class="row text-center px-4 px-md-5 g-4">
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">🔐</div>
+                <h5 class="fw-bold">Secure Access</h5>
+                <p>Role-based login for admins and users with secure authentication.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h5 class="fw-bold">Job Reports</h5>
+                <p>Create and manage daily job reports with an intuitive interface.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h5 class="fw-bold">Admin Tools</h5>
+                <p>View users, oversee reports, and onboard new team members.</p>
+            </div>
+        </div>
+    </div>
 </div>
